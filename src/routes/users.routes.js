@@ -31,41 +31,12 @@ const router = Router();
  *                 data:
  *                   type: array
  *                   items:
- *                     $ref: "#/components/schemas/users"
- * 
- * /api/v1/users/:
- *  get:
- *     summary: Get all users
- *     tags: [Users] 
- *     requestBody:
- *       description: To register a new user you need a username, firstname, lastname, email and password
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: "#/components/schemas/register"
- *     responses:
- *       201:
- *         description: created
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: OK
- *                 data:
- *                   type: array
- *                   items:
- *                     $ref: "#/components/schemas/users"
- * 
+ *                     $ref: "#/components/schemas/register"
  * 
  */
 
 
 router.post('/users/new', userRegister);
-router.get("/users", authenticate, getAllUsers);
 
 
 module.exports = router;
