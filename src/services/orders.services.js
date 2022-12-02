@@ -23,9 +23,12 @@ class OrdersServices {
     }
 
     
-    static async addProductsInOrder(arrayProdInOrders){
+    static async addProductsInOrder(array){
         try{
-            arrayProdInOrders.forEach(async (item) => await ProductsInOrders.create(item));
+     
+            array.forEach((item) => console.log(item.orderId, item.productId, item.quantity, item.price));
+            array.forEach(async (item) => ProductsInOrders.create(item));
+            
             return;
         } catch(error){
             throw error;

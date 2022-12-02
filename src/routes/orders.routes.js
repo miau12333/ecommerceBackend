@@ -13,13 +13,6 @@ const router = Router();
 *       - in: path
 *         name: id
 *         required: true
-*     requestBody:
-*       description: To create a new order you need a userId, totalprice
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: "#/components/schemas/checkout"
 *     responses:
 *       201:
 *         description: created

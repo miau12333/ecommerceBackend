@@ -38,23 +38,42 @@ class CartsServices {
         }
     }
 
+    static async getProducts(id){
+        try{
+            const result = await ProductsInCarts.findAll({
+                where: {cartId: id },
+                attributes: ["product_id", "quantity", "price"],
+            });
+            return result;
+
+        }catch(error){
+            throw error;
+        }
+    };
+
     static async buy(id) {
         try {
 
             await ProductsInCarts.update({ status: "purchased" }, {
                 where: { cartId: id },
             });
-            const result = await Carts.update({ status: "purchased" }, {
+            await Carts.update({ status: "purchased" }, {
                 where: { id },
                 atributes: ["user_id", "totalPrice"],
             });
+            const result = await Carts.findOne({
+                where: { id },
+                atributes: ["user_id", "totalPrice"],
+            });
+
+            console.log(`***Resultado: del buy en CartsServices user_id ${result.userId} totalPrice: ${result.totalPrice}`);
             return result; 
 
         } catch (error) {
             throw error;
         }
-    }
+    };
 
-}
+};
 
 module.exports = CartsServices;
