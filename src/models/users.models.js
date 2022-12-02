@@ -21,7 +21,7 @@ const bcrypt = require("bcrypt");
 *         email:
 *          type: string
 *          example: tati@gmail.com
-*          password:
+*         password:
 *           type: string
 *           example: 1234
 *     loginUser:
