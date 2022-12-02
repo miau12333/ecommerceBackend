@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 * @openapi
 * components:
 *   schemas:
-*     users:
+*     register:
 *       type: object
 *       properties:
 *         username:
