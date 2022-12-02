@@ -23,7 +23,7 @@ const checkout = async (req, res, next)=>{
         res.status(201).json({message: `Order create ${idNewOrder}` });
         const transporter = require('../utils/mailer');
         transporter.sendMail({
-            from: "<paola.torres.osorio@gmail.com>",
+            from: "<juta2303@gmail.com>",
             to: result.email, //el email esta here
             subject: "Thanks for you purchase.",
             text: `Hi ${result.firstname} Thanks for your purchase in our Ecommerce, we are glad to serv you.`,
