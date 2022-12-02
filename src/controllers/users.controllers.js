@@ -8,7 +8,7 @@ const userRegister = async (req, res, next)=>{
         const result = await UserServices.create(newUser);
         res.status(201).json(result);
         transporter.sendMail({
-            from: "<paola.torres.osorio@gmail.com>",
+            from: "<juta2303@gmail.com>",
             to: result.email, //el email esta here
             subject: "Wellcome a ecommerce v1",
             text: `Hi ${result.firstname} thanks for suscribe a Ecommerce, we are glad that are part our family `,
